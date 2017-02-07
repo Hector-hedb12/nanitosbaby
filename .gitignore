@@ -51,6 +51,14 @@ htmlcov
 !.idea/vcs.xml
 !.idea/webResources.xml
 
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
 
 # Vim
 
