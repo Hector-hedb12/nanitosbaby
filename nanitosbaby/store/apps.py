@@ -4,4 +4,5 @@ from django.apps import AppConfig
 
 
 class StoreConfig(AppConfig):
-    name = 'store'
+    name = 'nanitosbaby.store'
+    verbose_name = 'Store'
