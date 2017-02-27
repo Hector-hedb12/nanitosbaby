@@ -5,8 +5,6 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
-from model_utils import Choices
-
 
 @python_2_unicode_compatible
 class Category(models.Model):
@@ -18,8 +16,7 @@ class Category(models.Model):
 
 @python_2_unicode_compatible
 class Size(models.Model):
-    SIZE_CHOICES = Choices('XS', 'S', 'M', 'L', 'XL', 'XXL')
-    name = models.CharField(_('Nombre'), max_length=5, choices=SIZE_CHOICES)
+    name = models.CharField(_('Nombre'), max_length=5)
 
     def __str__(self):
         return self.name
