@@ -3,8 +3,12 @@ from __future__ import absolute_import, unicode_literals
 
 from django import forms
 from django.contrib import admin
+from django.contrib.auth.models import Group
+from django.contrib.sites.models import Site
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from allauth.account.models import EmailAddress
+from allauth.socialaccount.models import SocialAccount, SocialApp, SocialToken
 from .models import User
 
 
@@ -40,3 +44,10 @@ class MyUserAdmin(AuthUserAdmin):
     ) + AuthUserAdmin.fieldsets
     list_display = ('username', 'name', 'is_superuser')
     search_fields = ['name']
+
+admin.site.unregister(Group)
+admin.site.unregister(Site)
+admin.site.unregister(SocialAccount)
+admin.site.unregister(SocialApp)
+admin.site.unregister(SocialToken)
+admin.site.unregister(EmailAddress)
