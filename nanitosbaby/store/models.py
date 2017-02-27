@@ -37,7 +37,7 @@ class Product(models.Model):
     name = models.CharField(_('Nombre'), max_length=150)
     description = models.TextField(_(u'Descripción'), default='')
     price = models.DecimalField(_('Precio'), max_digits=12, decimal_places=2, default=0)
-    image = models.ImageField(upload_to='products/%Y/%m/%d')
+    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
 
     category = models.ForeignKey('Category', models.SET_NULL, verbose_name=_(u'Categoría'), null=True)
     sizes = models.ManyToManyField('Size', through='ProductAmount', verbose_name=_('Tallas'))
