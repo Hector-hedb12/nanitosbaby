@@ -14,3 +14,18 @@ class Merceria(models.Model):
     def __str__(self):
         return self.nombre
 
+@python_2_unicode_compatible
+class Etiqueta(models.Model):
+    TALLA = 'T'
+    PUBLICIDAD = 'P'
+    TIPO_CHOICES = (
+        (TALLA, 'Talla'),
+        (PUBLICIDAD, 'Publicidad')
+    )
+
+    cantidad = models.IntegerField(_('Cantidad'), default=0)
+    tipo =  models.CharField(_(u'Tipo'), choices=TIPO_CHOICES, default=TALLA, max_length=1)
+    talla = models.ForeignKey('store.Size', models.CASCADE, verbose_name=_('Talla'))
+
+    def __str__(self):
+        return '{} - {}'.format(self.tipo, self.talla)
