@@ -29,3 +29,11 @@ class Etiqueta(models.Model):
 
     def __str__(self):
         return '{} - {}'.format(self.tipo, self.talla)
+
+@python_2_unicode_compatible
+class Bolsa(models.Model):
+    cantidad = models.IntegerField(_('Cantidad'), default=0)
+    modelo = models.CharField(_(u'Modelo'), max_length=50)
+
+    def __str__(self):
+        return self.modelo
