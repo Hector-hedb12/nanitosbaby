@@ -37,3 +37,12 @@ class Bolsa(models.Model):
 
     def __str__(self):
         return self.modelo
+
+
+@python_2_unicode_compatible
+class Tela(models.Model):
+    peso = models.DecimalField(_('Peso'), max_digits=3, decimal_places=2, help_text='(Kg)')
+    tipo = models.CharField(_(u'Tipo'), max_length=100)
+
+    def __str__(self):
+        return self.tipo

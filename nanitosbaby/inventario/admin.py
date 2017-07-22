@@ -2,7 +2,7 @@
 from __future__ import absolute_import, unicode_literals
 
 from django.contrib import admin
-from .models import Merceria, Etiqueta,Bolsa
+from .models import Merceria, Etiqueta, Bolsa, Tela
 
 
 @admin.register(Merceria)
@@ -19,4 +19,9 @@ class EtiquetaAdmin(admin.ModelAdmin):
 class BolsaAdmin(admin.ModelAdmin):
     fields = ['cantidad', 'modelo']
     list_display = ['cantidad', 'modelo']
+
+@admin.register(Tela)
+class TelaAdmin(admin.ModelAdmin):
+    fields = ['tipo', 'peso']
+    list_display = ['tipo', 'peso']
 
