@@ -9,10 +9,11 @@ from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
 from nanitosbaby.store.views import IndexView
+from nanitosbaby.empresa.views import AboutView
 
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='home'),
-    url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
+    url(r'^about/$', AboutView.as_view(), name='about'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),

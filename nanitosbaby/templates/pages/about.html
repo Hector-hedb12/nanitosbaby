@@ -1,1 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+{{ block.super }}
+<link href="{% static 'css/about.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+{% for description in description_list %}
+  <h2>{{ description.titulo }}</h2>
+  <p>{{ description.contenido }}</p>
+{% endfor %}
+
+{% endblock content %}
