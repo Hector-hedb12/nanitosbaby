@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from django.views import generic
 
-# Create your views here.
+from .models import ProductAmount
+
+
+class IndexView(generic.ListView):
+    template_name = 'pages/home.html'
+    context_object_name = 'product_list'
+
+    def get_queryset(self):
+        return ProductAmount.objects.order_by('product', 'amount')

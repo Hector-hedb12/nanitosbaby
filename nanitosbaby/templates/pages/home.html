@@ -8,4 +8,22 @@
 
 {% block content %}
 <img src="{% static "images/nanitos_baby.jpeg" %}" alt="Nanitos logo"/>
+
+<h2>Productos en existencia</h2>
+
+<table>
+    <tr>
+      <th>Nombre</th>
+      <th>Talla</th>
+      <th>Disponible</th>
+    </tr>
+{% for p_amount in product_list %}
+    <tr>
+      <td>{{ p_amount.product.name }}</td>
+      <td>{{ p_amount.size.name }}</td>
+      <td>{{ p_amount.amount }}</td>
+    </tr>
+{% endfor %}
+</table>
+
 {% endblock content %}
