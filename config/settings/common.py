@@ -47,6 +47,7 @@ LOCAL_APPS = (
     'nanitosbaby.users.apps.UsersConfig',
     'nanitosbaby.store.apps.StoreConfig',
     'nanitosbaby.inventario.apps.InventarioConfig',
+    'nanitosbaby.empresa.apps.EmpresaConfig',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
