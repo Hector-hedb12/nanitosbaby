@@ -13,6 +13,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Categoria'
+        verbose_name_plural = 'Categorias'
+
 
 @python_2_unicode_compatible
 class Size(models.Model):
@@ -20,6 +24,9 @@ class Size(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Talla'
 
 
 @python_2_unicode_compatible
@@ -30,6 +37,9 @@ class ProductAmount(models.Model):
 
     def __str__(self):
         return '{} - {}'.format(self.product, self.size)
+
+    class Meta:
+        verbose_name = 'Cantidad de Producto'
 
 
 @python_2_unicode_compatible
@@ -44,3 +54,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Producto'

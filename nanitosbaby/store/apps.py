@@ -5,4 +5,4 @@ from django.apps import AppConfig
 
 class StoreConfig(AppConfig):
     name = 'nanitosbaby.store'
-    verbose_name = 'Store'
+    verbose_name = 'Tienda'
