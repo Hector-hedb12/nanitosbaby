@@ -10,6 +10,10 @@ from django.utils.translation import ugettext_lazy as _
 class Descripcion(models.Model):
     titulo = models.CharField(_('titulo'), max_length=150)
     contenido = models.TextField(_('Contenido'), default='')
+    orden = models.IntegerField(_('Orden'), default=0)
 
     def __str__(self):
         return self.titulo
+
+    class Meta:
+        verbose_name_plural = 'Descripciones'

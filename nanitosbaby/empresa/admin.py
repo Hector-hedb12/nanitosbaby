@@ -5,5 +5,5 @@ from .models import Descripcion
 
 @admin.register(Descripcion)
 class DescripcionAdmin(admin.ModelAdmin):
-    fields = ['titulo', 'contenido']
-    list_display = ['titulo']
+    fields = ['titulo', 'contenido', 'orden']
+    list_display = ['titulo', 'orden']
