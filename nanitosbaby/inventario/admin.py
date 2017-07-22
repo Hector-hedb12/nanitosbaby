@@ -22,6 +22,6 @@ class BolsaAdmin(admin.ModelAdmin):
 
 @admin.register(Tela)
 class TelaAdmin(admin.ModelAdmin):
-    fields = ['tipo', 'peso']
-    list_display = ['tipo', 'peso']
+    fields = ['tipo', 'peso', 'image']
+    list_display = ['tipo', 'peso', 'image']
 

@@ -43,6 +43,7 @@ class Bolsa(models.Model):
 class Tela(models.Model):
     peso = models.DecimalField(_('Peso'), max_digits=3, decimal_places=2, help_text='(Kg)')
     tipo = models.CharField(_(u'Tipo'), max_length=100)
+    image = models.ImageField(upload_to='telas/%Y/%m/%d', blank=True)
 
     def __str__(self):
         return self.tipo
